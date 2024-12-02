@@ -15,7 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   createChatSchema,
   createChatSchemaType,
-} from "@/validations/chatSchema";
+} from "../../validations/groupChatValidations"
 import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import axios, { AxiosError } from "axios";
 import { CHAT_GROUP } from "@/lib/apiAuthRoutes";
@@ -34,7 +34,6 @@ export default function CreateChat({ user }: { user: CustomUser }) {
     resolver: zodResolver(createChatSchema),
   });
   const onSubmit = async (payload: createChatSchemaType) => {
-    // console.log("The payload is", payload);
     try {
       setLoading(true);
       const { data } = await axios.post(CHAT_GROUP, payload, {
@@ -42,7 +41,6 @@ export default function CreateChat({ user }: { user: CustomUser }) {
           Authorization: user.token,
         },
       });
-
       if (data?.message) {
         setOpen(false);
         toast.success(data?.message);

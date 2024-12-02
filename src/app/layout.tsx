@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
 import Sessionprovider from "@/providers/Sessionprovider";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <Toaster  richColors duration={10000}/>
           {children}
         </body>
       </Sessionprovider>

@@ -39,7 +39,6 @@ export const authOptions: AuthOptions = {
         };
 
         const { data } = await axios.post(LOGIN_URL, payload);
-        console.log(data);
         if (!data?.user?.id) {
           console.error("User ID not found in response data.");
           return false;
@@ -58,7 +57,6 @@ export const authOptions: AuthOptions = {
 
     async session({
       session,
-      user,
       token,
     }: {
       session: Session;
