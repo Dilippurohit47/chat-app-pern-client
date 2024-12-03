@@ -10,7 +10,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import axios from "axios";
-import { CHAT_GROUP } from "@/lib/apiAuthRoutes";
+import { CHAT_GROUP } from "@/lib/apiEndpoints";
 import { toast } from "sonner";
 import { clearCache } from "@/actions/common";
 

@@ -18,7 +18,7 @@ import {
 } from "../../validations/groupChatValidations"
 import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import axios, { AxiosError } from "axios";
-import { CHAT_GROUP } from "@/lib/apiAuthRoutes";
+import { CHAT_GROUP } from "@/lib/apiEndpoints";
 import { toast } from "sonner";
 import { clearCache } from "@/actions/common";
 
@@ -36,7 +36,7 @@ export default function CreateChat({ user }: { user: CustomUser }) {
   const onSubmit = async (payload: createChatSchemaType) => {
     try {
       setLoading(true);
-      const { data } = await axios.post(CHAT_GROUP, payload, {
+      const { data } = await axios.post(CHAT_GROUP, {...payload,user_id:user.id}, {
         headers: {
           Authorization: user.token,
         },

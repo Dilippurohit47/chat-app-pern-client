@@ -14,10 +14,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   createChatSchema,
   createChatSchemaType,
-} from "@/validations/chatSchema";
+} from "@/validations/groupChatValidations";
 import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import axios, { AxiosError } from "axios";
-import { CHAT_GROUP } from "@/lib/apiAuthRoutes";
+import { CHAT_GROUP } from "@/lib/apiEndpoints";
 import { toast } from "sonner";
 import { clearCache } from "@/actions/common";
 

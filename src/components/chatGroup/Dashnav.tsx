@@ -10,7 +10,7 @@ export default function DashNav({
   name: string;
 }) {
   return (
-    <nav className="py-2 px-6 flex justify-between items-center bg-white shadow-sm">
+    <nav className="py-2 px-6 flex justify-between items-center  shadow-sm">
       <h1 className="text-xl md:text-2xl font-extrabold">QuickChat</h1>
       <div className="flex items-center space-x-2 md:space-x-6 text-gray-700">
         <ProfileMenu name={name} image={image} />
